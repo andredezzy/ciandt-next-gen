@@ -35,8 +35,7 @@ function run() {
 
     const lineOfYear = _getLineOf(YEAR);
 
-    console.log(`The line that the year (${YEAR}) is into, is:`)
-    console.log(lineOfYear);
+    console.log(`The year (${YEAR}) is located at line: ${lineOfYear}`);
 }
 
 function isInt(value) {
