@@ -4,7 +4,7 @@ function run() {
     const _getLineOf = (n) => {
         let squareRoot = Math.sqrt(n);
 
-        if (!isInt(squareRoot)) {
+        if (squareRoot % 1 !== 0) {
             squareRoot += 1;
         }
 
@@ -14,10 +14,6 @@ function run() {
     const lineOfYear = _getLineOf(YEAR);
 
     console.log(`The year (${YEAR}) is located at line: ${lineOfYear}`);
-}
-
-function isInt(value) {
-    return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
 }
 
 run();
