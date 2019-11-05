@@ -2,7 +2,7 @@ function run() {
   const algarisms = [1, 4, 6, 8];
   const permutations = permutate(algarisms);
 
-  var sumOfPermutations = 0;
+  let sumOfPermutations = 0;
 
   for (permutationIndex in permutations) {
     const permutation = permutations[permutationIndex];
@@ -13,7 +13,7 @@ function run() {
   console.log(`The sum of all permutations is: ${sumOfPermutations}`);
 
   function merge(elements) {
-    var merged = "";
+    let merged = "";
 
     for (elementIndex in elements) {
       const element = elements[elementIndex];

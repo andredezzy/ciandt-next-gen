@@ -2,61 +2,24 @@ const START_AT = 1;
 const LIMIT = 1958;
 
 function run() {
-  var numbersPrint = "";
+    let numberSequenceString = "";
 
-  for (let i = START_AT; i <= LIMIT; i++) {
-    numbersPrint += i;
-  }
-
-  var numbers = {};
-  var biggestNumberSequence = {
-    number: -1,
-    sequenceCount: -1
-  };
-
-  for (let algarism = 0; algarism <= 9; algarism++) {
-    const number = {
-      sequences: [],
-      biggestSequence: 0
-    };
-
-    var currentSequence = "";
-    var sequenceCount = 0;
-
-    for (let i = 0; i < numbersPrint.length; i++) {
-      const numberChar = numbersPrint.charAt(i);
-
-      if (numberChar === algarism.toString()) {
-        currentSequence += numberChar;
-
-        sequenceCount++;
-      } else {
-        if (currentSequence.length > 0) number.sequences.push(currentSequence);
-        currentSequence = "";
-
-        if (sequenceCount > number.biggestSequence)
-          number.biggestSequence = sequenceCount;
-
-        sequenceCount = 0;
-      }
+    for (let i = START_AT; i <= LIMIT; i++) {
+        numberSequenceString += i;
     }
 
-    numbers[algarism] = number;
+    const findBiggestString = (arr) => {
+        return arr.reduce((total, current) => {
+            if (current.length > total.length) total = current;
 
-    if (number.biggestSequence > biggestNumberSequence.sequenceCount) {
-      biggestNumberSequence = {
-        number: algarism,
-        sequenceCount: number.biggestSequence
-      };
+            return total;
+        }, "")
     }
-  }
 
-  // console.log("All the numbers sequences:");
-  // console.log(numbers);
-  // console.log("\n");
+    const biggestSequence = findBiggestString(numberSequenceString.match(/([0-9])\1+/g));
 
-  console.log("The biggest sequence is:");
-  console.log(biggestNumberSequence);
+    console.log("The biggest sequence is:", biggestSequence);
+    console.log({number: biggestSequence[0], sequenceSize: biggestSequence.length})
 }
 
 run();

@@ -2,8 +2,8 @@ const START_AT = 1;
 const LIMIT = 1985;
 
 function run() {
-  var pairSum = 0;
-  var oddSum = 0;
+  let pairSum = 0;
+  let oddSum = 0;
 
   for (let i = START_AT; i <= LIMIT; i++) {
     if (i % 2 == 0) {

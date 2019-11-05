@@ -42,8 +42,8 @@ function run() {
         matrix.push([]);
       }
 
-      var currentRow = 0;
-      var currentColumn = 0;
+      let currentRow = 0;
+      let currentColumn = 0;
 
       for (primeIndex in primes) {
         const number = primes[primeIndex];
