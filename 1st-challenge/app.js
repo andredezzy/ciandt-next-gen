@@ -1,11 +1,11 @@
 const START_AT = 1;
-const LIMIT = 1985;
+const UNTIL = 1985;
 
 function run() {
   let pairSum = 0;
   let oddSum = 0;
 
-  for (let i = START_AT; i <= LIMIT; i++) {
+  for (let i = START_AT; i <= UNTIL; i++) {
     if (i % 2 == 0) {
       pairSum += i;
     } else {
@@ -16,7 +16,7 @@ function run() {
   const difference = oddSum - pairSum;
 
   console.log(
-    `The difference between the sum of odd numbers and sum of pair numbers of ${START_AT} until ${LIMIT}, is: ${difference}.`
+    `The difference between the sum of odd numbers and sum of pair numbers of ${START_AT} until ${UNTIL}, is: ${difference}.`
   );
 }
 

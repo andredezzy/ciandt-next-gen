@@ -1,19 +1,19 @@
 const YEAR = 1985;
 
 function run() {
-    const _getLineOf = (n) => {
-        let squareRoot = Math.sqrt(n);
+  const _getLineOf = n => {
+    let squareRoot = Math.sqrt(n);
 
-        if (squareRoot % 1 !== 0) {
-            squareRoot += 1;
-        }
-
-        return parseInt(squareRoot);
+    if (squareRoot % 1 !== 0) {
+      squareRoot += 1;
     }
 
-    const lineOfYear = _getLineOf(YEAR);
+    return parseInt(squareRoot);
+  };
 
-    console.log(`The year (${YEAR}) is located at line: ${lineOfYear}`);
+  const lineOfYear = _getLineOf(YEAR);
+
+  console.log(`The year (${YEAR}) is located at line: ${lineOfYear}`);
 }
 
 run();

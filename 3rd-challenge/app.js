@@ -1,25 +1,34 @@
 const START_AT = 1;
-const LIMIT = 1958;
+const UNTIL = 1958;
 
 function run() {
-    let numberSequenceString = "";
+  const _getNumberSequenceString = (startAt, until) => {
+    let str = "";
 
-    for (let i = START_AT; i <= LIMIT; i++) {
-        numberSequenceString += i;
+    for (let i = startAt; i <= until; i++) {
+      str += i;
     }
 
-    const findBiggestString = (arr) => {
-        return arr.reduce((total, current) => {
-            if (current.length > total.length) total = current;
+    return str;
+  };
 
-            return total;
-        }, "")
-    }
+  const _findBiggestString = arr => {
+    return arr.reduce((total, current) => {
+      if (current.length > total.length) total = current;
+      return total;
+    }, "");
+  };
 
-    const biggestSequence = findBiggestString(numberSequenceString.match(/([0-9])\1+/g));
+  const sequenceString = _getNumberSequenceString(START_AT, UNTIL);
+  const biggestSequence = _findBiggestString(
+    sequenceString.match(/([0-9])\1+/g)
+  );
 
-    console.log("The biggest sequence is:", biggestSequence);
-    console.log({number: biggestSequence[0], sequenceSize: biggestSequence.length})
+  console.log("The biggest sequence is:", biggestSequence);
+  console.log({
+    number: biggestSequence[0],
+    sequenceSize: biggestSequence.length
+  });
 }
 
 run();
